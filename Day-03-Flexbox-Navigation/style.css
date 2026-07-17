@@ -1,0 +1,50 @@
+/* ========================================== */
+/* DAY 3: FLEXBOX NAVIGATION & HERO           */
+/* ========================================== */
+
+/* (Assuming your Day 2 Reset and Variables are above this) */
+
+/* 1. THE MAIN NAVIGATION CONTAINER */
+/* Hint: Separate the logo and the link list to opposite sides */
+nav {
+    /* Add your flexbox rules here */
+    
+    
+    padding: 20px 50px;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle bottom shadow */
+}
+
+/* 2. THE NAVIGATION LIST */
+/* Hint: Make the list items sit next to each other with a gap */
+nav ul {
+    /* Add your flexbox rules here */
+    
+    
+    list-style: none; /* Removes the default bullet points */
+}
+
+/* Navigation Links - Base Styling */
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* 3. THE HERO SECTION */
+/* Hint: Stack the text and button vertically, perfectly in the center */
+.hero-section {
+    /* Add your flexbox column rules here */
+    
+    
+    min-height: 70vh; /* Ensures the section is tall enough to see the centering */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
