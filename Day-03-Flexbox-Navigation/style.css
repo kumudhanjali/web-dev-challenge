@@ -5,9 +5,10 @@
 /* (Assuming your Day 2 Reset and Variables are above this) */
 
 /* 1. THE MAIN NAVIGATION CONTAINER */
-/* Hint: Separate the logo and the link list to opposite sides */
 nav {
-    /* Add your flexbox rules here */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
     
     padding: 20px 50px;
@@ -16,13 +17,12 @@ nav {
 }
 
 /* 2. THE NAVIGATION LIST */
-/* Hint: Make the list items sit next to each other with a gap */
 nav ul {
     /* Add your flexbox rules here */
+    display: flex;
+    gap: 20px;
     
-    
-    list-style: none; /* Removes the default bullet points */
-}
+    list-style: none; 
 
 /* Navigation Links - Base Styling */
 nav a {
@@ -33,11 +33,12 @@ nav a {
 }
 
 /* 3. THE HERO SECTION */
-/* Hint: Stack the text and button vertically, perfectly in the center */
 .hero-section {
     /* Add your flexbox column rules here */
-    
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 70vh; /* Ensures the section is tall enough to see the centering */
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     text-align: center;
@@ -47,4 +48,12 @@ nav a {
     font-size: 3rem;
     margin-bottom: 20px;
     color: var(--primary-color);
+}
+
+/* 4. BONUS CHALLENGE */
+
+/* Change link color when hovered */
+nav a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px) scale(1.05);s
 }
