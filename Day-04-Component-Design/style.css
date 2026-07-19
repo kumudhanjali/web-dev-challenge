@@ -1,0 +1,88 @@
+/* ========================================== */
+/* DAY 4: COMPONENT DESIGN (PROFILE CARDS)     */
+/* ========================================== */
+:root{
+    --text-color:#222;
+}
+/* 1. THE PARENT GRID CONTAINER */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap; /* Allows cards to drop to the next line if space runs out */
+}
+
+/* 2. THE PROFILE CARD COMPONENT */
+/* Hint: Set the background, padding, borders, and text alignment here */
+.profile-card {
+    background-color:#ffffff;
+    text-align: center;
+    max-width: 280px;
+    width: 100%;
+    
+    /* Add your padding, border-radius, and box-shadow here */
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    overflow:hidden;
+
+    /* Optional: Add transition if you are attempting the bonus challenge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3. COMPONENT SUB-ELEMENTS */
+/* Hint: Handle the image size and make sure it stays circular or clean */
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image a perfect circle */
+    object-fit: cover;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Enforce Visual Hierarchy: Name (Bold & Large) */
+.profile-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+/* Enforce Visual Hierarchy: Role (Smaller & Lighter) */
+.profile-card p {
+    font-size: 0.95rem;
+    color: #666666; /* Subdued gray text */
+    margin-bottom: 20px;
+}
+/* 4. BUTTON STYLING */
+.profile-card a{
+    display:inline-block;
+    text-decoration:none;
+    background:#0077ff;
+    color:white;
+    padding:10px 18px;
+    border-radius:5px;
+    transition:background 0.3s ease;
+}
+
+.profile-card a:hover{
+    background:#0055cc;
+}
+
+/* Bonus Challenge */
+.profile-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:40px;
+}
