@@ -1,0 +1,44 @@
+/* ========================================== */
+/* DAY 5: CSS GRID ARCHITECTURE (INITIATIVES) */
+/* ========================================== */
+
+/* 1. THE GRID CONTAINER */
+
+.initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    
+
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the whole grid on massive monitors */
+}
+
+/* 2. THE INITIATIVE CARDS (The Children) */
+
+.initiative-card {
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--primary-color); /* Adds a nice branded accent line */
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Styling the Text Inside */
+.initiative-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.initiative-card p {
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* 3. BONUS CHALLENGE STYLING (Optional) */
+ .featured {
+    grid-column: span 2;
+} 

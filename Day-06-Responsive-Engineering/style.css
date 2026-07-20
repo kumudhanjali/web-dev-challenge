@@ -1,0 +1,35 @@
+/* ========================================== */
+/* DAY 6: RESPONSIVE ENGINEERING              */
+/* ========================================== */
+
+/* (Keep all your previous desktop CSS above this) */
+
+
+/* 1. TABLET BREAKPOINT (Screens smaller than 900px) */
+@media (max-width: 900px) {
+    .initiatives-grid {
+        /* Rewrite your grid-template-columns rule here for 2 columns */
+        
+    }
+}
+
+
+/* 2. MOBILE PHONE BREAKPOINT (Screens smaller than 600px) */
+@media (max-width: 600px) {
+    /* Adjust the grid for small displays */
+    .initiatives-grid {
+        /* Rewrite your grid-template-columns rule here for 1 column */
+        
+    }
+
+    /* Adjust the Navigation Bar so it doesn't overflow */
+    nav {
+        /* Hint: Consider changing padding or changing flex direction */
+        padding: 15px 20px;
+    }
+    
+    /* Shrink down massive font sizes so they fit mobile viewports */
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+}
