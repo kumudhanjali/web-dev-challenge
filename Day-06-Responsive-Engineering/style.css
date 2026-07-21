@@ -8,23 +8,19 @@
 /* 1. TABLET BREAKPOINT (Screens smaller than 900px) */
 @media (max-width: 900px) {
     .initiatives-grid {
-        /* Rewrite your grid-template-columns rule here for 2 columns */
-        
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
 /* 2. MOBILE PHONE BREAKPOINT (Screens smaller than 600px) */
 @media (max-width: 600px) {
-    /* Adjust the grid for small displays */
     .initiatives-grid {
-        /* Rewrite your grid-template-columns rule here for 1 column */
-        
+        grid-template-columns: repeat(1, 1fr);        
     }
 
     /* Adjust the Navigation Bar so it doesn't overflow */
     nav {
-        /* Hint: Consider changing padding or changing flex direction */
         padding: 15px 20px;
     }
     
