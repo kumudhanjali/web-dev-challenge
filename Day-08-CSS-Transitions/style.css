@@ -1,0 +1,40 @@
+/* ========================================== */
+/* DAY 8: NATIVE CSS TRANSITIONS              */
+/* ========================================== */
+
+/* 1. BUTTON MICRO-INTERACTIONS */
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background-color: #0056b3;
+}
+
+/* 2. ELEVATING PROFILE CARDS */
+.profile-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* 3. FLUID FORM INPUTS */
+input, textarea {
+    /* Make the border color fade in smoothly rather than snapping */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 4. NAVIGATION LINK*/
+a {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    transform: translateY(-2px);
+} 
