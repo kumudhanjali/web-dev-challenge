@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Accessibility demonstration page showing semantic HTML, keyboard navigation and WCAG best practices.">
+    <title>Day 9 Accessibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">
+    Skip to main content
+</a>
+
+<header id="home">
+    <nav aria-label="Main Navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <h1>Accessibility Demo</h1>
+
+   <img
+    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+    alt="Person using a laptop with accessibility-focused web development"
+    loading="lazy">>
+
+    <p>
+        This page demonstrates basic web accessibility.
+    </p>
+
+    <button type="button">
+    Learn More
+    </button>
+
+    <section id="about">
+    <h2>About</h2>
+    <p>
+        This page demonstrates accessible web design using semantic HTML,
+        keyboard navigation, and descriptive alternative text.
+    </p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: accessibility@example.com</p>
+</section>
+
+</main>
+
+</body>
+</html>

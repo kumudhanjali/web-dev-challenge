@@ -1,0 +1,66 @@
+/* ========================================== */
+/* DAY 9: ACCESSIBILITY (A11Y) STANDARDS      */
+/* ========================================== */
+/* DAY 9 - Accessibility */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #005fcc;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+:focus-visible {
+    outline: 3px solid #ff9900;
+    outline-offset: 3px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+}
+
+nav {
+    margin-bottom: 30px;
+}
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #005fcc;
+    font-weight: bold;
+}
+
+img {
+    max-width: 800px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 18px;
+    background: #005fcc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0046a8;
+}
+
+section {
+    margin-top: 40px;
+}
