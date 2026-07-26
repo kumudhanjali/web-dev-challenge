@@ -85,6 +85,13 @@ nav a{
 nav a:hover{
     color:var(--primary-color);
 }
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:2rem;
+    cursor:pointer;
+}
 
 /* ==========================================
    HERO SECTION
@@ -308,13 +315,30 @@ footer{
 @media(max-width:600px){
 
     nav{
+        position:relative;
         flex-direction:column;
         gap:15px;
     }
 
+    .menu-toggle{
+     display:block;
+     background:none;
+     border:none;
+     font-size:28px;
+     cursor:pointer;
+    }
+
     nav ul{
+        display:none;
         flex-direction:column;
         align-items:center;
+        width:100%;
+        margin-top:15px;
+    }
+
+    .nav-active{
+     display:flex;
+     flex-direction:column;
     }
 
     .hero-section h1{
@@ -334,7 +358,4 @@ footer{
         align-items:center;
     }
 
-}
-.active-state {
-    color: #2563eb;
 }
