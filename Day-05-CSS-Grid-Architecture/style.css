@@ -42,3 +42,10 @@
  .featured {
     grid-column: span 2;
 } 
+.active-card{
+    border:3px solid #28a745;
+}
+
+.completed-card{
+    border:3px solid gray;
+}
