@@ -1,0 +1,30 @@
+/* ========================================== */
+/* DAY 17: THEME ENGINEERING (CSS VARIABLES)  */
+/* ========================================== */
+
+/* 1. THE DEFAULT (LIGHT) THEME */
+/* You should already have this from Day 2! */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #0056b3;
+    --card-bg: #f8f9fa;
+    --border-color: #eaeaea;
+}
+
+/* 2. THE DARK THEME OVERRIDE */
+/* When this class is applied to the <body>, it overwrites the variables above */
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --primary-color: #4b6cb7; /* Slightly lighter blue for dark mode contrast */
+    --card-bg: #1e1e1e;
+    --border-color: #333333;
+}
+
+/* IMPORTANT: Ensure your elements are actually using the variables! */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade effect */
+}

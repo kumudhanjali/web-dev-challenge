@@ -5,10 +5,38 @@
 :root{
     --primary-color:#0056b3;
     --primary-dark:#004494;
+
     --text-color:#333333;
     --bg-color:#ffffff;
+
     --light-bg:#f5f7fa;
+
+    --card-bg:#ffffff;
+    --border-color:#cccccc;
+
+    --header-bg:#ffffff;
+    --footer-bg:#222222;
+
     --main-font:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+/* DARK MODE */
+
+.dark-theme{
+
+    --primary-color:#4b6cb7;
+    --primary-dark:#365899;
+
+    --text-color:#f1f1f1;
+    --bg-color:#121212;
+
+    --light-bg:#1a1a1a;
+
+    --card-bg:#1f1f1f;
+    --border-color:#444444;
+
+    --header-bg:#1b1b1b;
+    --footer-bg:#000000;
 }
 
 *{
@@ -58,10 +86,7 @@ a{
 header{
     position:sticky;
     top:0;
-    background:white;
-    z-index:1000;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
-}
+    background:var(--header-bg);
 
 nav{
     max-width:1200px;
@@ -104,7 +129,7 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    background:linear-gradient(135deg,#f5f7fa,#dbe9ff);
+    background:var(--light-bg);
 }
 
 .hero-section h1{
@@ -148,7 +173,7 @@ nav a:hover{
 }
 
 .initiative-card{
-    background:white;
+    background:var(--card-bg);
     padding:25px;
     border-left:5px solid var(--primary-color);
     border-radius:10px;
@@ -169,7 +194,7 @@ nav a:hover{
 ========================================== */
 
 .core-team{
-    background:#fafafa;
+    background:var(--light-bg);
 }
 
 .core-team h2{
@@ -185,7 +210,7 @@ nav a:hover{
 }
 
 .profile-card{
-    background:white;
+    background:var(--card-bg);
     width:280px;
     padding:25px;
     text-align:center;
@@ -250,10 +275,12 @@ input,
 textarea{
     width:100%;
     padding:12px;
-    border:1px solid #cccccc;
+    border:1px solid var(--border-color);
     border-radius:6px;
     font-size:16px;
     transition:border-color .3s, box-shadow .3s;
+    background:var(--card-bg);
+    color:var(--text-color);
 }
 
 textarea{
@@ -292,7 +319,7 @@ footer{
     margin-top:60px;
     padding:30px;
     text-align:center;
-    background:#222;
+    background:var(--footer-bg);
     color:white;
 }
 
@@ -357,5 +384,25 @@ footer{
         flex-direction:column;
         align-items:center;
     }
+
+}
+#theme-toggle{
+
+    background:none;
+    border:none;
+    cursor:pointer;
+
+    color:var(--text-color);
+
+    font-size:24px;
+
+    margin-left:15px;
+
+    transition:.3s;
+}
+
+#theme-toggle:hover{
+
+    transform:scale(1.1);
 
 }
