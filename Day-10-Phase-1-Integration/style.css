@@ -87,6 +87,7 @@ header{
     position:sticky;
     top:0;
     background:var(--header-bg);
+}
 
 nav{
     max-width:1200px;
@@ -405,4 +406,37 @@ footer{
 
     transform:scale(1.1);
 
+}
+/* ==========================================
+   DAY 18 - EVENT LOOP TESTIMONIALS
+========================================== */
+
+.testimonials{
+    background:var(--light-bg);
+    text-align:center;
+}
+
+.testimonial-card{
+    max-width:700px;
+    margin:30px auto 0;
+    padding:30px;
+    background:var(--card-bg);
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-5px);
+}
+
+.testimonial-card h3{
+    color:var(--primary-color);
+    margin-bottom:15px;
+}
+
+.testimonial-card p{
+    color:var(--text-color);
+    font-style:italic;
+    line-height:1.7;
 }
