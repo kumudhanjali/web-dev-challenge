@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synexus | Engineering Community</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <nav aria-label="Main Navigation">
+     <a href="#home">SyNexus Community</a>
+
+         <button class="menu-toggle" aria-label="Toggle Menu">
+        ☰
+        </button>
+
+         <button id="theme-toggle" aria-label="Toggle Theme">
+        🌙
+         </button>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+         <li><a href="#initiatives">Initiatives</a></li>
+          <li><a href="#team">Core Team</a></li>
+          <li><a href="#join">Join Us</a></li>
+         </ul>
+    </nav>
+</header>
+
+    <main id="main-content">
+
+        <section class="hero-section">
+            <h1>Empowering the Next Generation of Engineers</h1>
+
+                <p>
+                    Learn, collaborate, innovate, and build solutions that create an impact.
+                </p>
+
+                <a href="#join" class="hero-btn">
+                    Join the Community
+                </a>
+            </section>
+
+        <section class="initiatives" id="initiatives">
+            <h2>Our Initiatives</h2>
+
+                <div class="initiatives-grid" id="dynamic-grid">
+
+                </div>
+            </section>
+
+        <section class="core-team" id="team">
+            <h2>Community Leadership</h2>
+
+            <div class="team-grid">
+
+               <div class="profile-card">
+                    <img src="https://picsum.photos/150" alt="John Doe">
+
+                    <h3>John Doe</h3>
+
+                    <p>Chief Executive Officer</p>
+
+                    <a href="#">View Profile</a>
+             </div>
+
+             <div class="profile-card">
+                <img src="https://picsum.photos/150" alt="Jane Smith">  
+
+                <h3>Jane Smith</h3>
+
+                 <p>Chief Technology Officer</p>
+
+                <a href="#">View Profile</a>
+            </div>
+
+            <div class="profile-card">
+                <img src="https://picsum.photos/150" alt="Alex Johnson">
+
+              <h3>Alex Johnson</h3>
+
+             <p>Lead UI Designer</p>
+
+             <a href="#">View Profile</a>
+         </div>
+
+</div>
+
+            </section>
+            <section id="testimonial-container" class="testimonials">
+
+    <h2>Community Testimonials</h2>
+
+    <div class="testimonial-card">
+
+        <h3 id="testimonial-name"></h3>
+
+        <p id="testimonial-quote"></p>
+
+    </div>
+
+</section>
+
+        <section class="join-us" id="join">
+            <h2>Join the Engineering Community</h2>
+
+<p>Standard, not a trend. Build with us.</p>
+
+<form class="membership-form" novalidate>
+
+    <div class="form-group">
+        <label for="fullName">
+            Full Name <span class="required">*</span>
+        </label>
+
+        <input
+            type="text"
+            id="fullName"
+            placeholder="Jane Doe"
+            required>
+    </div>
+
+    <div class="form-group">
+        <label for="emailAddress">
+            Student Email <span class="required">*</span>
+        </label>
+
+        <input
+            type="email"
+            id="emailAddress"
+            placeholder="jane@student.edu"
+            required>
+    </div>
+
+    <div class="form-group">
+        <label for="motivation">
+            Why do you want to join?
+        </label>
+
+        <textarea
+            id="motivation"
+            rows="4"
+            placeholder="I want to solve actual problems..."></textarea>
+    </div>
+
+    <button class="btn-submit" type="submit">
+        Submit Application
+    </button>
+
+</form>
+            </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Synexus Community. Standard, not a trend.</p>
+    </footer>
+    <!-- DAY 19 MODAL -->
+
+<div id="project-modal" class="modal-overlay" style="display: none;">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3 id="modal-title">Project Title</h3>
+
+            <button id="close-modal" class="close-btn">
+                &times;
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <p>
+                More details about this specific initiative will load here dynamically.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
