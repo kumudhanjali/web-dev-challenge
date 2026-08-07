@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 23 - Drag and Drop Kanban Board</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="kanban-board">
+
+        <div class="kanban-column" id="todo-col">
+            <h3>To Do</h3>
+
+            <div class="task-list">
+                <div class="task-card" draggable="true">
+                    Finalize UI Designs
+                </div>
+
+                <div class="task-card" draggable="true">
+                    Write API Documentation
+                </div>
+            </div>
+        </div>
+
+        <div class="kanban-column" id="progress-col">
+            <h3>In Progress</h3>
+
+            <div class="task-list">
+                <div class="task-card" draggable="true">
+                    Build Drag and Drop Logic
+                </div>
+            </div>
+        </div>
+
+        <div class="kanban-column" id="done-col">
+            <h3>Done</h3>
+
+            <div class="task-list">
+                <div class="task-card" draggable="true">
+                    Phase 1 Integration
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
