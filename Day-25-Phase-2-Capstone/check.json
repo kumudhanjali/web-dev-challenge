@@ -1,0 +1,8 @@
+{
+  file : "Phase 2 Capstone",
+  type : {
+    lang_one : "HTML",
+    lang_two : "CSS",
+    lang_three : "JavaScript",
+  },
+}
