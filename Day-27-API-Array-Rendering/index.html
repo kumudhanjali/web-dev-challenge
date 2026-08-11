@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Synexus | GitHub Contributor Lookup
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================== -->
+    <!-- DAY 26 + DAY 27: GITHUB API PROJECT       -->
+    <!-- ========================================== -->
+
+    <main>
+
+
+        <!-- ========================================== -->
+        <!-- SEARCH SECTION                              -->
+        <!-- ========================================== -->
+
+        <section class="github-section">
+
+            <h1>
+                GitHub Contributor Lookup
+            </h1>
+
+            <p>
+                Search for a GitHub developer and
+                explore their latest repositories.
+            </p>
+
+
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="github-username"
+                    placeholder="Enter GitHub username"
+                    aria-label="GitHub username"
+                    autocomplete="off">
+
+
+                <button
+                    id="search-dev-btn"
+                    type="button">
+
+                    Lookup
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- DAY 26: DEVELOPER PROFILE                  -->
+        <!-- ========================================== -->
+
+        <section class="profile-section">
+
+            <h2>
+                Developer Profile
+            </h2>
+
+
+            <div id="dev-profile-card">
+
+                <!--
+                    GitHub profile will be
+                    rendered here by JavaScript.
+                -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- DAY 27: REPOSITORY GRID                    -->
+        <!-- ========================================== -->
+
+        <section class="repositories-section">
+
+            <h2>
+                Recent Repositories
+            </h2>
+
+
+            <!--
+                REQUIRED BY DAY 27:
+
+                Repository cards are dynamically
+                rendered into this grid.
+            -->
+
+            <div
+                id="repos-grid"
+                class="initiatives-grid">
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT                                 -->
+    <!-- ========================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
