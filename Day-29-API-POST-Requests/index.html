@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Synexus | Propose an Initiative</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- ========================================== -->
+        <!-- DAY 29: API POST REQUESTS                  -->
+        <!-- ========================================== -->
+
+        <section class="proposal-section">
+
+            <div class="header">
+
+                <p class="day-label">
+                    DAY 29 / 50
+                </p>
+
+                <h1>
+                    Propose an Initiative
+                </h1>
+
+                <p class="subtitle">
+                    Have an idea that could make our community better?
+                    Submit your technical initiative below.
+                </p>
+
+            </div>
+
+
+            <!-- ========================================== -->
+            <!-- PROPOSAL FORM                              -->
+            <!-- ========================================== -->
+
+            <form id="proposal-form">
+
+                <div class="form-group">
+
+                    <label for="initiative-title">
+                        Initiative Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="initiative-title"
+                        name="title"
+                        placeholder="e.g. Campus Coding Club"
+                        autocomplete="off"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="initiative-desc">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="initiative-desc"
+                        name="description"
+                        rows="7"
+                        placeholder="Describe your initiative and how it could help..."
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="submit-btn">
+
+                    Submit Proposal
+
+                </button>
+
+            </form>
+
+
+            <!-- ========================================== -->
+            <!-- SERVER RESPONSE                            -->
+            <!-- ========================================== -->
+
+            <div
+                id="feedback-message"
+                class="feedback-message"
+                aria-live="polite">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

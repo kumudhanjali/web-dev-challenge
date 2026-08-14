@@ -1,0 +1,298 @@
+/* ========================================== */
+/* DAY 29: API POST REQUESTS                  */
+/* ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fb;
+
+    color: #1f2937;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* ========================================== */
+/* MAIN CONTAINER                             */
+/* ========================================== */
+
+.container {
+    width: 100%;
+
+    max-width: 700px;
+}
+
+
+/* ========================================== */
+/* PROPOSAL SECTION                           */
+/* ========================================== */
+
+.proposal-section {
+    background: #ffffff;
+
+    padding: 45px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================== */
+/* HEADER                                     */
+/* ========================================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.day-label {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #6366f1;
+
+    margin-bottom: 10px;
+}
+
+
+h1 {
+    font-size: 36px;
+
+    margin-bottom: 12px;
+
+    color: #111827;
+}
+
+
+.subtitle {
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #6b7280;
+}
+
+
+/* ========================================== */
+/* FORM                                       */
+/* ========================================== */
+
+#proposal-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+label {
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+input,
+textarea {
+    width: 100%;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 13px 15px;
+
+    font-size: 15px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+input {
+    height: 48px;
+}
+
+
+textarea {
+    resize: vertical;
+
+    min-height: 140px;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+input:focus,
+textarea:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* ========================================== */
+/* SUBMIT BUTTON                              */
+/* ========================================== */
+
+button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 14px;
+
+    background: #6366f1;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+button:hover:not(:disabled) {
+    background: #4f46e5;
+
+    transform: translateY(-1px);
+}
+
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+button:disabled {
+    background: #9ca3af;
+
+    cursor: not-allowed;
+}
+
+
+/* ========================================== */
+/* FEEDBACK                                   */
+/* ========================================== */
+
+.feedback-message {
+    margin-top: 24px;
+
+    text-align: center;
+
+    min-height: 24px;
+}
+
+
+.feedback-message p {
+    margin: 0;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================== */
+/* RESPONSIVE DESIGN                          */
+/* ========================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .proposal-section {
+        padding: 28px 22px;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+}
+.success-message {
+    color: #15803d;
+
+    background: #dcfce7;
+
+    border: 1px solid #86efac;
+}
+
+
+.error-message {
+    color: #b91c1c;
+
+    background: #fee2e2;
+
+    border: 1px solid #fca5a5;
+}
