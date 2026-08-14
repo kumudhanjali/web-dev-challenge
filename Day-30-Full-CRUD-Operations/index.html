@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Synexus | Full CRUD Operations</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- ========================================== -->
+        <!-- HEADER                                     -->
+        <!-- ========================================== -->
+
+        <header class="header">
+
+            <p class="day-label">
+                DAY 30 / 50
+            </p>
+
+            <h1>
+                Completing the Cycle
+            </h1>
+
+            <p class="subtitle">
+                Create, Read, Update and Delete —
+                the complete CRUD lifecycle.
+            </p>
+
+        </header>
+
+
+        <!-- ========================================== -->
+        <!-- PROPOSAL FORM                              -->
+        <!-- ========================================== -->
+
+        <section class="card">
+
+            <h2>
+                Propose an Initiative
+            </h2>
+
+            <p class="section-description">
+                Create a new initiative using a POST request.
+            </p>
+
+
+            <form id="proposal-form">
+
+                <div class="form-group">
+
+                    <label for="initiative-title">
+                        Initiative Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="initiative-title"
+                        name="title"
+                        placeholder="e.g. Campus Coding Club"
+                        autocomplete="off"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="initiative-desc">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="initiative-desc"
+                        name="description"
+                        rows="6"
+                        placeholder="Describe your initiative..."
+                        required></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="submit-btn"
+                    class="btn-primary">
+
+                    Submit Proposal
+
+                </button>
+
+            </form>
+
+
+            <div
+                id="feedback-message"
+                class="feedback-message"
+                aria-live="polite">
+            </div>
+
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- MANAGE PROPOSAL                            -->
+        <!-- ========================================== -->
+
+        <section class="card manage-section">
+
+            <h2>
+                Manage Proposal
+            </h2>
+
+            <p class="section-description">
+                Update or delete a specific proposal
+                using its server ID.
+            </p>
+
+
+            <div class="manage-buttons">
+
+                <button
+                    id="update-btn"
+                    class="btn-update"
+                    type="button">
+
+                    Update Proposal
+
+                </button>
+
+
+                <button
+                    id="delete-btn"
+                    class="btn-danger"
+                    type="button">
+
+                    Delete Proposal
+
+                </button>
+
+            </div>
+
+
+            <p class="manage-note">
+                Testing with proposal ID: <strong>1</strong>
+            </p>
+
+
+            <div
+                id="manage-feedback"
+                class="feedback-message"
+                aria-live="polite">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

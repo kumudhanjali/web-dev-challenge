@@ -1,86 +1,471 @@
 /* ========================================== */
-/* DAY 30: FULL CRUD - PUT & DELETE REQUESTS  */
+/* DAY 30: COMPLETING THE CYCLE               */
+/* PUT & DELETE REQUESTS                      */
 /* ========================================== */
 
-const updateBtn = document.getElementById('update-btn');
-const deleteBtn = document.getElementById('delete-btn');
-const feedbackMessage = document.getElementById('feedback-message'); // Reusing yesterday's feedback UI
 
-// 1. THE UPDATE ENGINE (PUT Request)
-async function updateInitiative(targetId, updatedData) {
+/* ========================================== */
+/* DOM ELEMENTS                               */
+/* ========================================== */
+
+const proposalForm =
+    document.getElementById('proposal-form');
+
+
+const titleInput =
+    document.getElementById('initiative-title');
+
+
+const descInput =
+    document.getElementById('initiative-desc');
+
+
+const submitBtn =
+    document.getElementById('submit-btn');
+
+
+const feedbackMessage =
+    document.getElementById('feedback-message');
+
+
+const updateBtn =
+    document.getElementById('update-btn');
+
+
+const deleteBtn =
+    document.getElementById('delete-btn');
+
+
+const manageFeedback =
+    document.getElementById('manage-feedback');
+
+
+/*
+ * The README specifically asks us to
+ * hardcode an ID such as 1 for testing.
+ */
+
+const TEST_ID = 1;
+
+
+/* ========================================== */
+/* POST — CREATE INITIATIVE                   */
+/* ========================================== */
+
+async function submitInitiative(dataPayload) {
+
+    submitBtn.disabled = true;
+
+    submitBtn.textContent = 'Submitting...';
+
+    feedbackMessage.innerHTML = '';
+
+
     try {
-        feedbackMessage.innerHTML = `<p class="loading-text">Updating initiative #${targetId}...</p>`;
 
-        // Notice the URL! We append the targetId to tell the server WHICH item to update.
-        const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${targetId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-            body: JSON.stringify(updatedData)
-        });
+        const response = await fetch(
+            'https://jsonplaceholder.typicode.com/posts',
+            {
 
-        if (!response.ok) throw new Error("Failed to update data.");
+                method: 'POST',
 
-        const serverResponse = await response.json();
-        console.log("Update Confirmed:", serverResponse);
+                headers: {
+                    'Content-type':
+                        'application/json; charset=UTF-8'
+                },
 
-        feedbackMessage.innerHTML = `<p style="color: blue;">🔄 Initiative #${targetId} updated successfully!</p>`;
+                body: JSON.stringify(dataPayload)
 
-    } catch (error) {
-        console.error(error);
-        feedbackMessage.innerHTML = `<p style="color: red;">⚠️ ${error.message}</p>`;
-    }
-}
+            }
+        );
 
-// 2. THE DESTRUCTION ENGINE (DELETE Request)
-async function deleteInitiative(targetId) {
-    try {
-        feedbackMessage.innerHTML = `<p class="loading-text">Deleting initiative #${targetId}...</p>`;
 
-        // A DELETE request is simple. No body, no headers. Just point and shoot.
-        const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${targetId}`, {
-            method: 'DELETE'
-        });
+        if (!response.ok) {
 
-        if (!response.ok) throw new Error("Failed to delete data.");
+            throw new Error(
+                `Server rejected the request. Status: ${response.status}`
+            );
 
-        // The server usually returns an empty object {} on a successful delete
-        console.log(`Initiative #${targetId} destroyed.`);
-
-        feedbackMessage.innerHTML = `<p style="color: red;">🗑️ Initiative #${targetId} was permanently deleted.</p>`;
-
-    } catch (error) {
-        console.error(error);
-        feedbackMessage.innerHTML = `<p style="color: red;">⚠️ ${error.message}</p>`;
-    }
-}
-
-// 3. BIND THE EVENTS
-if (updateBtn) {
-    updateBtn.addEventListener('click', () => {
-        // Mock data to send as the update
-        const payload = {
-            id: 1,
-            title: "StoreLane V2 Architecture [UPDATED]",
-            body: "Revised specifications for the hyperlocal platform.",
-            userId: 1
-        };
-        
-        updateInitiative(1, payload);
-    });
-}
-
-if (deleteBtn) {
-    deleteBtn.addEventListener('click', () => {
-        // Step A: Implement Defensive UX
-        // YOUR CODE HERE: Use window.confirm() to ask the user if they are sure.
-        // If they hit cancel, return early and do nothing!
-        
-        const isConfirmed = window.confirm("WARNING: Are you sure you want to delete this? This cannot be undone.");
-        
-        if (isConfirmed) {
-            deleteInitiative(1); // Execute the kill command
         }
-    });
+
+
+        const serverResponse =
+            await response.json();
+
+
+        console.log(
+            'POST — Initiative Created:',
+            serverResponse
+        );
+
+
+        feedbackMessage.innerHTML = `
+            <p class="success-message">
+                ✅ Initiative created successfully!
+                (ID: ${serverResponse.id})
+            </p>
+        `;
+
+
+        proposalForm.reset();
+
+
+    } catch (error) {
+
+        console.error(
+            'POST Error:',
+            error
+        );
+
+
+        feedbackMessage.innerHTML = `
+            <p class="error-message">
+                ⚠️ ${error.message}
+            </p>
+        `;
+
+    } finally {
+
+        submitBtn.disabled = false;
+
+        submitBtn.textContent = 'Submit Proposal';
+
+    }
+
 }
+
+
+/* ========================================== */
+/* PUT — UPDATE INITIATIVE                   */
+/* ========================================== */
+
+async function updateInitiative(id) {
+
+    manageFeedback.innerHTML = '';
+
+
+    /*
+     * PUT replaces the complete resource,
+     * so we provide the full updated object.
+     */
+
+    const updatedData = {
+
+        id: id,
+
+        title: 'Campus Coding Club [UPDATED]',
+
+        body:
+            'This initiative description has been updated using a PUT request.',
+
+        userId: 1
+
+    };
+
+
+    try {
+
+        const response = await fetch(
+            'https://jsonplaceholder.typicode.com/posts/' + id,
+            {
+
+                /*
+                 * HTTP method required by
+                 * the Day 30 README.
+                 */
+
+                method: 'PUT',
+
+
+                /*
+                 * Standard JSON headers.
+                 */
+
+                headers: {
+                    'Content-type':
+                        'application/json; charset=UTF-8'
+                },
+
+
+                /*
+                 * Convert the JavaScript object
+                 * into JSON.
+                 */
+
+                body: JSON.stringify(updatedData)
+
+            }
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                `Update failed. Status: ${response.status}`
+            );
+
+        }
+
+
+        /*
+         * JSONPlaceholder returns the
+         * modified object.
+         */
+
+        const serverResponse =
+            await response.json();
+
+
+        /*
+         * IMPORTANT:
+         * This console output is the evidence
+         * requested by the README.
+         */
+
+        console.log(
+            'PUT — Initiative Updated Successfully:',
+            serverResponse
+        );
+
+
+        manageFeedback.innerHTML = `
+            <p class="success-message">
+                ✅ Proposal #${id} updated successfully!
+            </p>
+        `;
+
+
+    } catch (error) {
+
+        console.error(
+            'PUT Error:',
+            error
+        );
+
+
+        manageFeedback.innerHTML = `
+            <p class="error-message">
+                ⚠️ ${error.message}
+            </p>
+        `;
+
+    }
+
+}
+
+
+/* ========================================== */
+/* DELETE — DESTROY INITIATIVE               */
+/* ========================================== */
+
+async function deleteInitiative(id) {
+
+    manageFeedback.innerHTML = '';
+
+
+    try {
+
+        /*
+         * DELETE does NOT need headers
+         * or a request body.
+         */
+
+        const response = await fetch(
+            'https://jsonplaceholder.typicode.com/posts/' + id,
+            {
+
+                method: 'DELETE'
+
+            }
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                `Delete failed. Status: ${response.status}`
+            );
+
+        }
+
+
+        /*
+         * JSONPlaceholder returns an empty
+         * object for a successful DELETE.
+         */
+
+        const serverResponse =
+            await response.json();
+
+
+        /*
+         * README specifically asks us
+         * to log a success message.
+         */
+
+        console.log(
+            'DELETE — Initiative Deleted Successfully:',
+            serverResponse
+        );
+
+
+        manageFeedback.innerHTML = `
+            <p class="success-message">
+                ✅ Proposal #${id} deleted successfully!
+            </p>
+        `;
+
+
+    } catch (error) {
+
+        console.error(
+            'DELETE Error:',
+            error
+        );
+
+
+        manageFeedback.innerHTML = `
+            <p class="error-message">
+                ⚠️ ${error.message}
+            </p>
+        `;
+
+    }
+
+}
+
+
+/* ========================================== */
+/* PROPOSAL FORM EVENT                        */
+/* ========================================== */
+
+proposalForm.addEventListener(
+    'submit',
+    (event) => {
+
+        /*
+         * Prevent the browser from
+         * refreshing the page.
+         */
+
+        event.preventDefault();
+
+
+        const title =
+            titleInput.value.trim();
+
+
+        const description =
+            descInput.value.trim();
+
+
+        /*
+         * Basic validation.
+         */
+
+        if (
+            title === '' ||
+            description === ''
+        ) {
+
+            feedbackMessage.innerHTML = `
+                <p class="error-message">
+                    ⚠️ Please fill out all fields.
+                </p>
+            `;
+
+            return;
+
+        }
+
+
+        /*
+         * Create the POST payload.
+         */
+
+        const newInitiative = {
+
+            title: title,
+
+            body: description,
+
+            userId: 1
+
+        };
+
+
+        console.log(
+            'POST — Sending Payload:',
+            newInitiative
+        );
+
+
+        submitInitiative(
+            newInitiative
+        );
+
+    }
+);
+
+
+/* ========================================== */
+/* UPDATE BUTTON EVENT                        */
+/* ========================================== */
+
+updateBtn.addEventListener(
+    'click',
+    () => {
+
+        /*
+         * The README asks us to hardcode
+         * an ID such as 1.
+         */
+
+        updateInitiative(
+            TEST_ID
+        );
+
+    }
+);
+
+
+/* ========================================== */
+/* DELETE BUTTON EVENT                        */
+/* ========================================== */
+
+deleteBtn.addEventListener(
+    'click',
+    () => {
+
+        /*
+         * BONUS CHALLENGE:
+         * Never delete without asking first.
+         */
+
+        const confirmed =
+            window.confirm(
+                'Are you sure you want to delete this initiative? This action cannot be undone.'
+            );
+
+
+        /*
+         * Only execute DELETE if the
+         * user clicks "OK".
+         */
+
+        if (confirmed) {
+
+            deleteInitiative(
+                TEST_ID
+            );
+
+        } else {
+
+            console.log(
+                'DELETE — User cancelled the deletion.'
+            );
+
+        }
+
+    }
+);
