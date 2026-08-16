@@ -1,0 +1,336 @@
+/* ==========================================
+   DAY 32: ES6 MODULES
+   ========================================== */
+
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+   ========================================== */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.header {
+
+    text-align: center;
+
+    padding: 60px 20px 40px;
+
+    background: #111827;
+
+    color: white;
+
+}
+
+
+.day-label {
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+
+    color: #93c5fd;
+
+}
+
+
+.header h1 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 12px;
+
+}
+
+
+.subtitle {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.container {
+
+    width: min(900px, 92%);
+
+    margin: 40px auto;
+
+}
+
+
+/* ==========================================
+   FEED
+   ========================================== */
+
+#data-feed {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+/* ==========================================
+   POST CARD
+   ========================================== */
+
+.feed-card {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.feed-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* ==========================================
+   POST NUMBER
+   ========================================== */
+
+.feed-number {
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    color: #6b7280;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ==========================================
+   POST TITLE
+   ========================================== */
+
+.feed-card h2 {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 10px;
+
+    text-transform: capitalize;
+
+    color: #111827;
+
+}
+
+
+/* ==========================================
+   POST BODY
+   ========================================== */
+
+.feed-card p {
+
+    color: #6b7280;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================
+   LOADING SENTINEL
+   ========================================== */
+
+.loading-spinner {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 100px;
+
+    padding: 30px;
+
+    color: #6b7280;
+
+    font-size: 0.95rem;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================
+   SPINNER
+   ========================================== */
+
+.spinner {
+
+    width: 20px;
+
+    height: 20px;
+
+    border: 3px solid #d1d5db;
+
+    border-top-color: #111827;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================
+   END MESSAGE
+   ========================================== */
+
+.end-message {
+
+    color: #374151;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   ERROR MESSAGE
+   ========================================== */
+
+.error-message {
+
+    color: #dc2626;
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding:
+            45px 20px 30px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .subtitle {
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .container {
+
+        width: 94%;
+
+        margin: 25px auto;
+
+    }
+
+
+    .feed-card {
+
+        padding: 18px;
+
+    }
+
+
+    .feed-card h2 {
+
+        font-size: 1.05rem;
+
+    }
+
+}
