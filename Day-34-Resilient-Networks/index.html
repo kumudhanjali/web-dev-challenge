@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Network Resilience ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+
+    <main class="container">
+
+        <div class="badge">
+            <span>✦</span>
+            DAY 34 · WEB DEVELOPMENT
+        </div>
+
+        <h1>
+            Network
+            <span>Resilience</span>
+        </h1>
+
+        <p class="subtitle">
+            When the network fails, we don't give up.
+            <br>
+            We simply try again. ♡
+        </p>
+
+        <section class="search-card">
+
+            <div class="input-wrapper">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter a GitHub username..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <button id="searchBtn">
+                Search
+                <span>→</span>
+            </button>
+
+        </section>
+
+        <div class="retry-info">
+            <span class="pulse"></span>
+            <span>Automatic retry enabled</span>
+            <span class="dot">•</span>
+            <span>Exponential backoff</span>
+        </div>
+
+        <p id="status"></p>
+
+        <section id="result"></section>
+
+        <footer>
+            Built while learning JavaScript ♡
+        </footer>
+
+    </main>
+
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>

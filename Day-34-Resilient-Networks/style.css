@@ -1,0 +1,548 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cream: #fffaf8;
+    --pink: #d8899b;
+    --dark-pink: #a95c70;
+    --text: #3d3034;
+    --soft-text: #8d7c81;
+    --white: rgba(255, 255, 255, 0.78);
+    --border: rgba(216, 137, 155, 0.2);
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #f8dfe5 0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #e9ddf5 0,
+            transparent 32%
+        ),
+        var(--cream);
+
+    overflow-x: hidden;
+}
+
+
+/* ------------------------- */
+/* Background Decorations    */
+/* ------------------------- */
+
+.background-shape {
+    position: fixed;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+.shape-one {
+    top: -120px;
+    left: -100px;
+    background: #e9a8b7;
+}
+
+.shape-two {
+    right: -120px;
+    bottom: -100px;
+    background: #c9b1e8;
+}
+
+
+/* ------------------------- */
+/* Main Container            */
+/* ------------------------- */
+
+.container {
+    position: relative;
+
+    width: min(90%, 680px);
+
+    margin: 0 auto;
+
+    padding: 80px 0 40px;
+
+    text-align: center;
+}
+
+
+/* ------------------------- */
+/* Badge                     */
+/* ------------------------- */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    color: var(--dark-pink);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    backdrop-filter: blur(10px);
+}
+
+.badge span {
+    font-size: 14px;
+}
+
+
+/* ------------------------- */
+/* Heading                   */
+/* ------------------------- */
+
+h1 {
+    margin-top: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 9vw, 76px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+h1 span {
+    display: block;
+
+    color: var(--pink);
+
+    font-style: italic;
+}
+
+
+/* ------------------------- */
+/* Subtitle                  */
+/* ------------------------- */
+
+.subtitle {
+    margin-top: 25px;
+
+    color: var(--soft-text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* ------------------------- */
+/* Search Card               */
+/* ------------------------- */
+
+.search-card {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 40px;
+
+    padding: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 18px;
+
+    background: var(--white);
+
+    box-shadow:
+        0 15px 40px rgba(120, 80, 90, 0.08);
+
+    backdrop-filter: blur(20px);
+}
+
+.input-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    flex: 1;
+
+    padding-left: 15px;
+}
+
+.search-icon {
+    margin-right: 10px;
+
+    color: var(--pink);
+
+    font-size: 25px;
+}
+
+input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #b3a6aa;
+}
+
+
+/* ------------------------- */
+/* Button                    */
+/* ------------------------- */
+
+button {
+    display: flex;
+
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 22px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--pink);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: var(--dark-pink);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(169, 92, 112, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ------------------------- */
+/* Retry Information         */
+/* ------------------------- */
+
+.retry-info {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: var(--soft-text);
+
+    font-size: 11px;
+}
+
+.dot {
+    color: #c7b6bb;
+}
+
+.pulse {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #8cc9a3;
+
+    box-shadow: 0 0 0 4px rgba(140, 201, 163, 0.15);
+}
+
+
+/* ------------------------- */
+/* Status                    */
+/* ------------------------- */
+
+#status {
+    min-height: 25px;
+
+    margin-top: 25px;
+
+    color: var(--dark-pink);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ------------------------- */
+/* User Card                 */
+/* ------------------------- */
+
+#result {
+    margin-top: 10px;
+}
+
+.user-card {
+    position: relative;
+
+    padding: 35px 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 20px 50px rgba(120, 80, 90, 0.1);
+
+    backdrop-filter: blur(20px);
+
+    animation: appear 0.4s ease;
+}
+
+.user-card::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    color: #e5a6b5;
+
+    font-size: 20px;
+}
+
+.user-card img {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 10px 25px rgba(120, 80, 90, 0.15);
+}
+
+.user-card h2 {
+    margin-top: 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+}
+
+.username {
+    margin-top: 4px;
+
+    color: var(--pink);
+
+    font-size: 13px;
+}
+
+.bio {
+    max-width: 430px;
+
+    margin: 18px auto;
+
+    color: var(--soft-text);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.stats {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.stat {
+    min-width: 120px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background: rgba(248, 223, 229, 0.45);
+
+    font-size: 12px;
+}
+
+.stat strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--dark-pink);
+
+    font-size: 17px;
+}
+
+
+/* ------------------------- */
+/* Error                     */
+/* ------------------------- */
+
+.error-card {
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 235, 239, 0.7);
+
+    color: #b45d70;
+
+    font-size: 13px;
+
+    animation: appear 0.3s ease;
+}
+
+.error-icon {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 25px;
+}
+
+
+/* ------------------------- */
+/* Footer                    */
+/* ------------------------- */
+
+footer {
+    margin-top: 60px;
+
+    color: #b0a0a5;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ------------------------- */
+/* Animation                 */
+/* ------------------------- */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ------------------------- */
+/* Mobile                    */
+/* ------------------------- */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding-top: 50px;
+    }
+
+    .search-card {
+        flex-direction: column;
+    }
+
+    .input-wrapper {
+        padding: 10px;
+    }
+
+    button {
+        justify-content: center;
+    }
+
+    .retry-info {
+        flex-wrap: wrap;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .stat {
+        width: 100%;
+    }
+
+}
