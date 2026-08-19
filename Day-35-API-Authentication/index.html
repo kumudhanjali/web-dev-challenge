@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secure API Console | Day 35</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="app">
+
+        <header class="hero">
+
+            <div class="day-badge">
+                DAY 35 / 50
+            </div>
+
+            <h1>
+                Secure API
+                <span>Console</span>
+            </h1>
+
+            <p>
+                API Authentication with Bearer Tokens
+            </p>
+
+        </header>
+
+
+        <section class="dashboard">
+
+            <!-- AUTH CARD -->
+            <div class="card auth-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="eyebrow">AUTHENTICATION</span>
+                        <h2>Session Status</h2>
+                    </div>
+
+                    <div id="statusDot" class="status-dot"></div>
+
+                </div>
+
+
+                <div id="sessionStatus" class="session-status">
+                    Checking session...
+                </div>
+
+
+                <div class="token-box">
+
+                    <div class="token-label">
+                        <span>AUTH TOKEN</span>
+                        <span id="tokenState">Not found</span>
+                    </div>
+
+                    <code id="tokenDisplay">
+                        No token stored
+                    </code>
+
+                </div>
+
+
+                <div class="button-row">
+
+                    <button id="loginBtn" class="primary-btn">
+                        Add Mock Token
+                    </button>
+
+                    <button id="logoutBtn" class="secondary-btn">
+                        Remove Token
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELETE CARD -->
+            <div class="card action-card">
+
+                <span class="eyebrow">SECURE REQUEST</span>
+
+                <h2>Delete a Resource</h2>
+
+                <p class="description">
+                    Send an authenticated DELETE request using
+                    <strong>Authorization: Bearer</strong>.
+                </p>
+
+
+                <label for="resourceId">
+                    Resource ID
+                </label>
+
+                <div class="input-row">
+
+                    <input
+                        type="number"
+                        id="resourceId"
+                        value="1"
+                        min="1"
+                        placeholder="Enter resource ID"
+                    >
+
+                    <button id="deleteBtn" class="delete-btn">
+                        Secure Delete
+                    </button>
+
+                </div>
+
+
+                <div class="request-preview">
+
+                    <div class="preview-header">
+                        <span>REQUEST PREVIEW</span>
+                        <span class="method">DELETE</span>
+                    </div>
+
+                    <code>
+                        /posts/<span id="previewId">1</span>
+                    </code>
+
+                    <div class="header-line">
+                        Authorization:
+                        <span>Bearer •••••••••••</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOG CARD -->
+            <div class="card log-card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <span class="eyebrow">NETWORK LOG</span>
+                        <h2>Security Activity</h2>
+                    </div>
+
+                    <button id="clearLogBtn" class="clear-btn">
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div id="activityLog" class="activity-log">
+
+                    <div class="log-entry info">
+                        <span class="log-icon">●</span>
+                        <span>Waiting for an authenticated request...</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <span>Vanilla JavaScript</span>
+            <span>•</span>
+            <span>Bearer Authentication</span>
+            <span>•</span>
+            <span>HTTP Security</span>
+        </footer>
+
+    </main>
+
+
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>

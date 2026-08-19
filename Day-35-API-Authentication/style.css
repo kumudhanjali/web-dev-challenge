@@ -1,0 +1,649 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg: #0d0b12;
+    --card: rgba(25, 21, 34, 0.78);
+    --border: rgba(255, 255, 255, 0.09);
+
+    --text: #f7f3f8;
+    --muted: #a49cab;
+
+    --accent: #d6a8ff;
+    --accent-light: #efd9ff;
+
+    --green: #78e6b0;
+    --red: #ff8d9d;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(155, 86, 214, 0.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(225, 129, 180, 0.10),
+            transparent 30%
+        ),
+        var(--bg);
+
+    overflow-x: hidden;
+}
+
+
+.background-glow {
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+.glow-one {
+    top: -100px;
+    left: -80px;
+
+    background: rgba(185, 104, 255, 0.12);
+}
+
+
+.glow-two {
+    bottom: -120px;
+    right: -80px;
+
+    background: rgba(255, 139, 199, 0.10);
+}
+
+
+.app {
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 70px 0 35px;
+}
+
+
+/* HERO */
+
+.hero {
+    margin-bottom: 45px;
+}
+
+
+.day-badge {
+    display: inline-block;
+
+    padding: 7px 13px;
+
+    border: 1px solid rgba(214, 168, 255, 0.25);
+
+    border-radius: 30px;
+
+    color: var(--accent-light);
+
+    background: rgba(214, 168, 255, 0.08);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.hero h1 {
+    margin-top: 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 7vw, 72px);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: var(--accent);
+}
+
+
+.hero p {
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* CARDS */
+
+.card {
+    padding: 28px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    background: var(--card);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(214, 168, 255, 0.18);
+}
+
+
+.log-card {
+    grid-column: 1 / -1;
+}
+
+
+.card-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+
+.eyebrow {
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.card h2 {
+    margin-top: 6px;
+
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+
+/* STATUS */
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+
+    margin-top: 6px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    box-shadow: 0 0 15px rgba(255, 141, 157, 0.5);
+
+    transition: 0.3s;
+}
+
+
+.status-dot.active {
+    background: var(--green);
+
+    box-shadow: 0 0 15px rgba(120, 230, 176, 0.6);
+}
+
+
+.session-status {
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* TOKEN */
+
+.token-box {
+    padding: 17px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.token-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+#tokenState {
+    color: var(--red);
+}
+
+
+#tokenState.active {
+    color: var(--green);
+}
+
+
+.token-box code {
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--accent-light);
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* BUTTONS */
+
+.button-row {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: all 0.2s ease;
+}
+
+
+.primary-btn,
+.secondary-btn,
+.delete-btn {
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.primary-btn {
+    color: #17111c;
+
+    background: var(--accent);
+}
+
+
+.primary-btn:hover {
+    background: var(--accent-light);
+
+    transform: translateY(-1px);
+}
+
+
+.secondary-btn {
+    color: var(--text);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid var(--border);
+}
+
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* DELETE */
+
+.description {
+    margin: 12px 0 25px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.description strong {
+    color: var(--accent-light);
+}
+
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.input-row {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+input {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    color: var(--text);
+
+    background: rgba(0, 0, 0, 0.25);
+
+    font-family: inherit;
+}
+
+
+input:focus {
+    border-color: rgba(214, 168, 255, 0.5);
+}
+
+
+.delete-btn {
+    flex-shrink: 0;
+
+    color: white;
+
+    background: rgba(255, 96, 117, 0.18);
+
+    border: 1px solid rgba(255, 141, 157, 0.25);
+}
+
+
+.delete-btn:hover {
+    background: rgba(255, 96, 117, 0.28);
+
+    transform: translateY(-1px);
+}
+
+
+/* REQUEST PREVIEW */
+
+.request-preview {
+    margin-top: 20px;
+
+    padding: 17px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.23);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.preview-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 13px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.method {
+    color: var(--green);
+}
+
+
+.request-preview code {
+    display: block;
+
+    color: var(--accent-light);
+
+    font-family: monospace;
+
+    font-size: 13px;
+}
+
+
+.header-line {
+    margin-top: 12px;
+
+    color: #77717d;
+
+    font-family: monospace;
+
+    font-size: 11px;
+}
+
+
+.header-line span {
+    color: var(--muted);
+}
+
+
+/* LOG */
+
+.clear-btn {
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    color: var(--muted);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    font-size: 11px;
+}
+
+
+.clear-btn:hover {
+    color: var(--text);
+
+    background: rgba(255, 255, 255, 0.09);
+}
+
+
+.activity-log {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    max-height: 190px;
+
+    overflow-y: auto;
+}
+
+
+.log-entry {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.log-icon {
+    font-size: 8px;
+}
+
+
+.log-entry.success .log-icon {
+    color: var(--green);
+}
+
+
+.log-entry.error .log-icon {
+    color: var(--red);
+}
+
+
+.log-entry.info .log-icon {
+    color: var(--accent);
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 35px;
+
+    color: #69616f;
+
+    font-size: 10px;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+
+    .app {
+        padding-top: 45px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .log-card {
+        grid-column: auto;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .delete-btn {
+        width: 100%;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+
+    .button-row button {
+        width: 100%;
+    }
+
+}
