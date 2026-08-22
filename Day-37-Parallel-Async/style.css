@@ -1,0 +1,917 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --background: #f8f6f1;
+    --card: rgba(255, 255, 255, 0.72);
+
+    --text: #29251f;
+    --muted: #77736c;
+
+    --accent: #9b5c76;
+    --accent-dark: #7f465f;
+
+    --soft-pink: #f3dce2;
+    --soft-green: #e3eadb;
+
+    --border: #e5dfd5;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(245, 218, 225, 0.75),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(220, 231, 205, 0.75),
+            transparent 35%
+        ),
+
+        var(--background);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    position: relative;
+
+}
+
+
+/* ==========================================
+   BACKGROUND FLOWERS
+========================================== */
+
+.background-flower {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    opacity: 0.16;
+
+    font-family: Georgia, serif;
+
+}
+
+
+.flower-one {
+
+    font-size: 280px;
+
+    top: -70px;
+
+    right: -60px;
+
+    transform: rotate(20deg);
+
+    color: #c8899d;
+
+}
+
+
+.flower-two {
+
+    font-size: 230px;
+
+    bottom: -50px;
+
+    left: -40px;
+
+    transform: rotate(-20deg);
+
+    color: #9ab38d;
+
+}
+
+
+.flower-three {
+
+    font-size: 100px;
+
+    top: 48%;
+
+    right: 6%;
+
+    color: #d9a2b2;
+
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.container {
+
+    width: min(1050px, 90%);
+
+    margin: 0 auto;
+
+    padding: 75px 0 55px;
+
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 42px;
+
+}
+
+
+.hero-flower {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--soft-pink);
+
+    color: var(--accent);
+
+    font-size: 28px;
+
+}
+
+
+.eyebrow {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    color: var(--accent);
+
+    margin-bottom: 16px;
+
+}
+
+
+.hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 6vw, 66px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--accent);
+
+}
+
+
+.subtitle {
+
+    margin-top: 20px;
+
+    max-width: 600px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.search-section {
+
+    width: min(850px, 100%);
+
+    margin: 0 auto 45px;
+
+}
+
+
+.search-box {
+
+    display: flex;
+
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 8px 20px;
+
+    box-shadow:
+
+        0 15px 45px
+        rgba(70, 55, 40, 0.08);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+.search-icon {
+
+    font-size: 28px;
+
+    color: var(--muted);
+
+    margin-right: 12px;
+
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    padding: 12px 0;
+
+    color: var(--text);
+
+}
+
+
+.search-box input::placeholder {
+
+    color: #aaa59d;
+
+}
+
+
+.hint {
+
+    text-align: center;
+
+    margin-top: 13px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+
+}
+
+
+.hint span {
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard-container {
+
+    animation: appear 0.45s ease;
+
+}
+
+
+/* ==========================================
+   PROFILE CARD
+========================================== */
+
+.dashboard-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 32px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(70, 55, 40, 0.1);
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.profile-avatar {
+
+    width: 115px;
+
+    height: 115px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid white;
+
+    box-shadow:
+
+        0 10px 28px
+        rgba(0, 0, 0, 0.1);
+
+}
+
+
+.profile-content {
+
+    flex: 1;
+
+}
+
+
+.profile-name {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+}
+
+
+.profile-username {
+
+    margin-top: 4px;
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+
+.profile-bio {
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    line-height: 1.6;
+
+}
+
+
+.stats {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.stat {
+
+    min-width: 100px;
+
+    padding: 12px 16px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    text-align: center;
+
+}
+
+
+.stat-number {
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+}
+
+
+.stat-label {
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    margin-top: 3px;
+
+}
+
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.dashboard-section {
+
+    margin-top: 28px;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+
+}
+
+
+.section-title {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 26px;
+
+}
+
+
+.section-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--soft-pink);
+
+    color: var(--accent);
+
+}
+
+
+/* ==========================================
+   REPOSITORIES
+========================================== */
+
+.repo-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.repo-card {
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 22px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow:
+
+        0 10px 35px
+        rgba(70, 55, 40, 0.06);
+
+    transition: 0.25s ease;
+
+}
+
+
+.repo-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.repo-name {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+}
+
+
+.repo-description {
+
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+    flex: 1;
+
+}
+
+
+.repo-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+.language {
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: var(--soft-green);
+
+}
+
+
+.stars {
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+
+/* ==========================================
+   FOLLOWERS
+========================================== */
+
+.followers-card {
+
+    padding: 24px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    box-shadow:
+
+        0 10px 35px
+        rgba(70, 55, 40, 0.06);
+
+}
+
+
+.follower-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+}
+
+
+.follower {
+
+    width: 100px;
+
+    text-align: center;
+
+}
+
+
+.follower img {
+
+    width: 58px;
+
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid white;
+
+    box-shadow:
+
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+.follower p {
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==========================================
+   EMPTY / LOADING / ERROR
+========================================== */
+
+.empty-state,
+.loading-state,
+.error-state {
+
+    text-align: center;
+
+    padding: 65px 25px;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border: 1px dashed #d8d0c5;
+
+    border-radius: 28px;
+
+}
+
+
+.empty-flower,
+.loading-flower {
+
+    font-size: 55px;
+
+    color: var(--accent);
+
+    margin-bottom: 15px;
+
+}
+
+
+.empty-state h2,
+.loading-state h2,
+.error-state h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+}
+
+
+.empty-state p,
+.loading-state p,
+.error-state p {
+
+    margin-top: 10px;
+
+    color: var(--muted);
+
+}
+
+
+.loading-flower {
+
+    display: inline-block;
+
+    animation: spin 1.4s linear infinite;
+
+}
+
+
+.error-state {
+
+    background:
+
+        rgba(255, 240, 240, 0.65);
+
+    color: #a65353;
+
+}
+
+
+.error-state p {
+
+    color: #a65353;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+footer span {
+
+    color: var(--accent);
+
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes spin {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .repo-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding-top: 50px;
+
+    }
+
+
+    .dashboard-header {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .stats {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .follower-list {
+
+        justify-content: center;
+
+    }
+
+
+    .flower-one {
+
+        font-size: 200px;
+
+    }
+
+}
