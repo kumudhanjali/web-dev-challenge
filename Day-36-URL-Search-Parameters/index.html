@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GitHub Profile Finder</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-flower flower-one">✿</div>
+    <div class="background-flower flower-two">✾</div>
+    <div class="background-flower flower-three">❀</div>
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div class="flower-icon">✿</div>
+
+            <p class="eyebrow">DEVELOPER DISCOVERY</p>
+
+            <h1>Find your next<br><span>favorite developer.</span></h1>
+
+            <p class="subtitle">
+                Search any GitHub username and explore their profile.
+            </p>
+
+        </section>
+
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search a GitHub username..."
+                    autocomplete="off"
+                >
+
+                <button id="search-btn">
+                    Search
+                </button>
+
+            </div>
+
+            <p class="hint">
+                Try searching for <span>octocat</span> or <span>torvalds</span>
+            </p>
+
+        </section>
+
+
+        <section id="profile-container">
+
+            <div class="empty-state">
+
+                <div class="empty-flower">❀</div>
+
+                <h2>Who are we looking for?</h2>
+
+                <p>
+                    Enter a GitHub username above to discover their profile.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Made with <span>✿</span> and a little curiosity</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>
