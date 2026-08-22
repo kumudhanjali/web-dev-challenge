@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        LiveStream | WebSocket Terminal
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="app-shell">
+
+
+        <!-- ========================================== -->
+        <!-- TOP BRANDING                               -->
+        <!-- ========================================== -->
+
+        <section class="hero">
+
+
+            <div class="eyebrow">
+
+                <span class="pulse-dot"></span>
+
+                PERSISTENT CONNECTION
+
+            </div>
+
+
+            <h1>
+
+                Live
+                <span>Stream.</span>
+
+            </h1>
+
+
+            <p>
+
+                A real-time conversation powered by
+                persistent WebSocket connections.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- LIVE TERMINAL                              -->
+        <!-- ========================================== -->
+
+        <section class="terminal-card">
+
+
+            <!-- TERMINAL HEADER -->
+
+            <div class="terminal-header">
+
+
+                <div class="terminal-title">
+
+                    <div class="terminal-icon">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="terminal-label">
+
+                            LIVE TERMINAL
+
+                        </p>
+
+
+                        <p class="terminal-subtitle">
+
+                            wss://ws.postman-echo.com/raw
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONNECTION STATUS -->
+
+                <div
+                    id="connection-status"
+                    class="connection-status connecting"
+                >
+
+                    <span class="status-dot"></span>
+
+                    <span
+                        id="status-text"
+                    >
+
+                        Connecting
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- LIVE FEED -->
+
+            <div
+                id="live-feed"
+                class="live-feed"
+            >
+
+
+                <div class="system-message">
+
+                    <span class="system-line"></span>
+
+
+                    <p>
+
+                        Initializing secure connection...
+
+                    </p>
+
+
+                    <span class="system-line"></span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INPUT AREA -->
+
+            <div class="message-area">
+
+
+                <div class="input-wrapper">
+
+
+                    <span class="prompt-symbol">
+
+                        ❯
+
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="ws-input"
+                        placeholder="Type a message..."
+                        autocomplete="off"
+                    >
+
+
+                </div>
+
+
+                <button
+                    id="ws-send"
+                    type="button"
+                >
+
+                    <span>
+
+                        Send
+
+                    </span>
+
+
+                    <span class="send-arrow">
+
+                        ↗
+
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="terminal-footer">
+
+
+                <p>
+
+                    <span class="footer-dot"></span>
+
+                    Messages are echoed back instantly
+
+                </p>
+
+
+                <p class="shortcut">
+
+                    Press
+
+                    <kbd>
+
+                        Enter
+
+                    </kbd>
+
+                    to send
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- INFO CARDS                                -->
+        <!-- ========================================== -->
+
+        <section class="info-grid">
+
+
+            <article class="info-card">
+
+                <span class="info-number">
+
+                    01
+
+                </span>
+
+
+                <h2>
+
+                    Persistent
+
+                </h2>
+
+
+                <p>
+
+                    One continuous connection instead of repeated HTTP requests.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="info-card">
+
+                <span class="info-number">
+
+                    02
+
+                </span>
+
+
+                <h2>
+
+                    Event Driven
+
+                </h2>
+
+
+                <p>
+
+                    Messages arrive instantly through WebSocket events.
+
+                </p>
+
+            </article>
+
+
+
+            <article class="info-card">
+
+                <span class="info-number">
+
+                    03
+
+                </span>
+
+
+                <h2>
+
+                    Two Way
+
+                </h2>
+
+
+                <p>
+
+                    Both the client and server can communicate in real time.
+
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script
+        type="module"
+        src="main.js"
+    ></script>
+
+
+</body>
+
+</html>
