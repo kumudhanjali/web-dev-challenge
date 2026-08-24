@@ -1,0 +1,8 @@
+{
+  file : "IndexedDB Offline Data",
+  type : {
+    type_one : "DB",
+    type_two : "JavaScript",
+  },
+  constraints : "No AI Block"
+}

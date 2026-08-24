@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#22252d"
+    >
+
+    <title>
+        Vault. | Offline Data
+    </title>
+
+
+    <!-- FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="app-shell">
+
+
+        <!-- ========================================== -->
+        <!-- HERO                                       -->
+        <!-- ========================================== -->
+
+        <section class="hero">
+
+
+            <div class="eyebrow">
+
+                <span class="pulse-dot"></span>
+
+                CLIENT-SIDE DATABASE
+
+            </div>
+
+
+            <h1>
+
+                Nothing gets
+                <span>lost.</span>
+
+            </h1>
+
+
+            <p>
+
+                An offline-first proposal workspace powered by
+                IndexedDB — quietly protecting your ideas until
+                the connection returns.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- MAIN APPLICATION                           -->
+        <!-- ========================================== -->
+
+        <section class="workspace">
+
+
+            <!-- TOP BAR -->
+
+            <div class="workspace-header">
+
+
+                <div class="database-title">
+
+
+                    <div class="database-icon">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="micro-label">
+
+                            PLATFORM DB
+
+                        </p>
+
+
+                        <p class="database-subtitle">
+
+                            offline_proposals
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="network-status"
+                    class="network-status online"
+                >
+
+                    <span class="status-dot"></span>
+
+                    <span
+                        id="network-text"
+                    >
+
+                        Online
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CONTENT -->
+
+            <div class="workspace-content">
+
+
+                <!-- FORM -->
+
+                <section class="proposal-section">
+
+
+                    <div class="section-heading">
+
+
+                        <div>
+
+                            <p class="micro-label">
+
+                                NEW RECORD
+
+                            </p>
+
+
+                            <h2>
+
+                                Save an idea.
+
+                            </h2>
+
+                        </div>
+
+
+                        <span class="record-number">
+
+                            40
+
+                        </span>
+
+                    </div>
+
+
+                    <p class="section-description">
+
+                        Submit your initiative while connected,
+                        or switch offline and IndexedDB will safely
+                        store it on your device.
+
+                    </p>
+
+
+                    <form
+                        id="proposal-form"
+                    >
+
+
+                        <div class="field-group">
+
+                            <label
+                                for="initiative-title"
+                            >
+
+                                Initiative title
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="initiative-title"
+                                placeholder="Give your idea a name..."
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field-group">
+
+                            <label
+                                for="initiative-desc"
+                            >
+
+                                Description
+
+                            </label>
+
+
+                            <textarea
+                                id="initiative-desc"
+                                placeholder="Tell us a little more about it..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            id="submit-button"
+                            type="submit"
+                        >
+
+                            <span
+                                id="button-text"
+                            >
+
+                                Save proposal
+
+                            </span>
+
+
+                            <span class="button-arrow">
+
+                                ↗
+
+                            </span>
+
+                        </button>
+
+
+                    </form>
+
+
+                    <div
+                        id="feedback-message"
+                        class="feedback-message"
+                        aria-live="polite"
+                    >
+
+                        <span class="feedback-dot"></span>
+
+                        <span>
+
+                            Ready to protect your data.
+
+                        </span>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- DATABASE PANEL -->
+
+                <aside class="database-panel">
+
+
+                    <div class="panel-top">
+
+
+                        <div>
+
+                            <p class="micro-label">
+
+                                LOCAL STORAGE
+
+                            </p>
+
+
+                            <h3>
+
+                                Your vault
+
+                            </h3>
+
+                        </div>
+
+
+                        <div class="vault-mark">
+
+                            ◌
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="storage-card">
+
+
+                        <div class="storage-header">
+
+                            <span>
+
+                                OFFLINE QUEUE
+
+                            </span>
+
+
+                            <span
+                                id="proposal-count"
+                            >
+
+                                0 records
+
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            id="offline-list"
+                            class="offline-list"
+                        >
+
+
+                            <div class="empty-state">
+
+
+                                <div class="empty-icon">
+
+                                    +
+
+                                </div>
+
+
+                                <p>
+
+                                    Nothing waiting yet.
+
+                                </p>
+
+
+                                <span>
+
+                                    Offline submissions will
+                                    appear here.
+
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="database-note">
+
+
+                        <span class="note-line"></span>
+
+
+                        <p>
+
+                            IndexedDB persists structured data
+                            directly inside the browser.
+
+                        </p>
+
+                    </div>
+
+
+                </aside>
+
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="workspace-footer">
+
+
+                <div class="architecture-item">
+
+                    <span class="architecture-number">
+
+                        01
+
+                    </span>
+
+
+                    <span>
+
+                        Detect network
+
+                    </span>
+
+                </div>
+
+
+                <span class="architecture-arrow">
+
+                    →
+
+                </span>
+
+
+                <div class="architecture-item">
+
+                    <span class="architecture-number">
+
+                        02
+
+                    </span>
+
+
+                    <span>
+
+                        Store locally
+
+                    </span>
+
+                </div>
+
+
+                <span class="architecture-arrow">
+
+                    →
+
+                </span>
+
+
+                <div class="architecture-item">
+
+                    <span class="architecture-number">
+
+                        03
+
+                    </span>
+
+
+                    <span>
+
+                        Recover online
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- PAGE FOOTER -->
+
+        <footer>
+
+            <span>
+
+                DAY 40 / 50
+
+            </span>
+
+
+            <span class="footer-line"></span>
+
+
+            <span>
+
+                INDEXEDDB · OFFLINE DATA
+
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <script
+        type="module"
+        src="main.js"
+    ></script>
+
+
+</body>
+
+</html>
