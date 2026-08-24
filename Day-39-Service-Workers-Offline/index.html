@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#1d2522"
+    >
+
+    <title>
+        Offline. | Service Worker
+    </title>
+
+
+    <!-- FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- STYLES -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="app-shell">
+
+
+        <!-- ========================================== -->
+        <!-- HERO                                       -->
+        <!-- ========================================== -->
+
+        <section class="hero">
+
+
+            <div class="eyebrow">
+
+                <span class="signal-dot"></span>
+
+                OFFLINE-FIRST ARCHITECTURE
+
+            </div>
+
+
+            <h1>
+
+                Always
+                <span>available.</span>
+
+            </h1>
+
+
+            <p>
+
+                A small demonstration of how Service Workers
+                quietly keep the core experience alive —
+                even when the network disappears.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ========================================== -->
+        <!-- OFFLINE DASHBOARD                          -->
+        <!-- ========================================== -->
+
+        <section class="offline-card">
+
+
+            <!-- CARD HEADER -->
+
+            <div class="card-header">
+
+
+                <div class="card-heading">
+
+
+                    <div class="worker-icon">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="card-label">
+
+                            SERVICE WORKER
+
+                        </p>
+
+
+                        <p class="card-subtitle">
+
+                            Browser background proxy
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div
+                    id="network-status"
+                    class="network-status online"
+                >
+
+                    <span class="status-dot"></span>
+
+                    <span
+                        id="network-text"
+                    >
+
+                        Online
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- STATUS PANEL -->
+
+            <div class="status-panel">
+
+
+                <div class="status-copy">
+
+
+                    <span class="section-label">
+
+                        CURRENT STATE
+
+                    </span>
+
+
+                    <h2
+                        id="state-title"
+                    >
+
+                        Checking protection...
+
+                    </h2>
+
+
+                    <p
+                        id="state-description"
+                    >
+
+                        Connecting your application to its
+                        offline safety layer.
+
+                    </p>
+
+
+                </div>
+
+
+                <div
+                    id="state-badge"
+                    class="state-badge loading"
+                >
+
+                    <span
+                        id="state-symbol"
+                    >
+
+                        ···
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ARCHITECTURE FLOW -->
+
+            <div class="architecture">
+
+
+                <p class="section-label">
+
+                    REQUEST FLOW
+
+                </p>
+
+
+                <div class="flow-grid">
+
+
+                    <article class="flow-step">
+
+                        <span class="step-number">
+
+                            01
+
+                        </span>
+
+
+                        <h3>
+
+                            Request
+
+                        </h3>
+
+
+                        <p>
+
+                            The browser asks for an app resource.
+
+                        </p>
+
+
+                    </article>
+
+
+                    <div class="flow-arrow">
+
+                        →
+
+                    </div>
+
+
+                    <article class="flow-step accent-step">
+
+                        <span class="step-number">
+
+                            02
+
+                        </span>
+
+
+                        <h3>
+
+                            Intercept
+
+                        </h3>
+
+
+                        <p>
+
+                            The Service Worker checks the cache.
+
+                        </p>
+
+
+                    </article>
+
+
+                    <div class="flow-arrow">
+
+                        →
+
+                    </div>
+
+
+                    <article class="flow-step">
+
+                        <span class="step-number">
+
+                            03
+
+                        </span>
+
+
+                        <h3>
+
+                            Respond
+
+                        </h3>
+
+
+                        <p>
+
+                            Cached first, network when needed.
+
+                        </p>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CACHE DETAILS -->
+
+            <div class="cache-section">
+
+
+                <div class="cache-heading">
+
+                    <div>
+
+                        <p class="section-label">
+
+                            CACHE STORAGE
+
+                        </p>
+
+
+                        <h3>
+
+                            Application shell
+
+                        </h3>
+
+                    </div>
+
+
+                    <span
+                        id="cache-version"
+                        class="cache-version"
+                    >
+
+                        platform-cache-v2
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="asset-list">
+
+
+                    <div class="asset-item">
+
+                        <span class="asset-icon">
+
+                            ⌂
+
+                        </span>
+
+
+                        <span>
+
+                            index.html
+
+                        </span>
+
+
+                        <span class="cached-label">
+
+                            Cached
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="asset-item">
+
+                        <span class="asset-icon">
+
+                            ✦
+
+                        </span>
+
+
+                        <span>
+
+                            style.css
+
+                        </span>
+
+
+                        <span class="cached-label">
+
+                            Cached
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="asset-item">
+
+                        <span class="asset-icon">
+
+                            &lt;/&gt;
+
+                        </span>
+
+
+                        <span>
+
+                            main.js
+
+                        </span>
+
+
+                        <span class="cached-label">
+
+                            Cached
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="card-footer">
+
+
+                <p
+                    id="worker-message"
+                    class="worker-message"
+                >
+
+                    Preparing offline protection...
+
+                </p>
+
+
+                <button
+                    id="check-status"
+                    type="button"
+                >
+
+                    <span>
+
+                        Check status
+
+                    </span>
+
+
+                    <span class="button-arrow">
+
+                        ↗
+
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- FOOTNOTE -->
+
+        <footer>
+
+            <span>
+
+                DAY 39 / 50
+
+            </span>
+
+
+            <span class="footer-line"></span>
+
+
+            <span>
+
+                OFFLINE ARCHITECTURE
+
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <script
+        src="main.js"
+    ></script>
+
+
+</body>
+
+</html>
