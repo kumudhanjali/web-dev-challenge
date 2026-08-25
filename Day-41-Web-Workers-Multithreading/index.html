@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Background Processing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="app">
+    <section class="card">
+      <div class="eyebrow">
+        <span class="status-dot"></span>
+        WEB WORKER LAB
+      </div>
+
+      <h1>Heavy work,<br><em>smooth experience.</em></h1>
+
+      <p class="description">
+        Run a demanding calculation in the background while the interface
+        continues to move freely.
+      </p>
+
+      <div class="visual-area">
+        <div class="orbit">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="orb orb-three"></div>
+
+          <div class="core">
+            <div class="spinner"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-box">
+        <div>
+          <span class="status-label">SYSTEM STATUS</span>
+          <p id="status">Ready to process</p>
+        </div>
+
+        <span id="statusBadge" class="badge ready">READY</span>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="primary-btn">
+          <span>Run Heavy Process</span>
+          <span class="arrow">→</span>
+        </button>
+
+        <button id="cancelBtn" class="secondary-btn" disabled>
+          Cancel
+        </button>
+      </div>
+
+      <div id="result" class="result">
+        Your calculation result will appear here.
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
