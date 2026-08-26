@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 42 | Web Components</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #ede9fe, transparent 35%),
+                radial-gradient(circle at bottom right, #fce7f3, transparent 35%),
+                #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 20px;
+            border-radius: 50px;
+            background: #ede9fe;
+            color: #6d28d9;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            color: #2d1b4e;
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            max-width: 600px;
+            margin: 0 auto 55px;
+            color: #6b7280;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .info {
+            margin-top: 55px;
+            padding: 16px 25px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #e5e7eb;
+            border-radius: 15px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        code {
+            color: #7c3aed;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="badge">
+            Day 42 • Native Web Components
+        </div>
+
+        <h1>Reusable UI, Built Natively. 🧩</h1>
+
+        <p class="subtitle">
+            Each card below is powered by the same custom
+            <code>&lt;user-card&gt;</code>
+            component — with its own protected Shadow DOM.
+        </p>
+
+        <section class="cards">
+
+            <user-card
+                name="Jane Doe"
+                role="Lead Engineer">
+            </user-card>
+
+            <user-card
+                name="Emily Carter"
+                role="UI Designer">
+            </user-card>
+
+            <user-card
+                name="Alex Morgan"
+                role="Frontend Developer">
+            </user-card>
+
+        </section>
+
+        <div class="info">
+            ⚡ The first component updates automatically in 4 seconds!
+        </div>
+
+    </main>
+
+    <script type="module" src="./main.js"></script>
+
+</body>
+</html>
