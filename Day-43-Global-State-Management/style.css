@@ -1,0 +1,1246 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap");
+
+/* =========================
+   RESET & VARIABLES
+========================= */
+
+:root {
+  --background: #f6f3ee;
+  --surface: #ffffff;
+  --text: #2d2925;
+  --muted: #817a72;
+  --accent: #a87856;
+  --accent-dark: #825d43;
+  --border: #e7e0d7;
+  --shadow: 0 20px 60px rgba(69, 51, 36, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(227, 202, 183, 0.55),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 100% 80%,
+      rgba(216, 205, 178, 0.45),
+      transparent 30%
+    ),
+    var(--background);
+}
+
+
+/* =========================
+   BACKGROUND GLOWS
+========================= */
+
+.background-glow {
+  position: fixed;
+  z-index: -1;
+
+  border-radius: 50%;
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.glow-one {
+  width: 400px;
+  height: 400px;
+
+  top: -200px;
+  left: -150px;
+
+  background: rgba(222, 187, 163, 0.45);
+}
+
+.glow-two {
+  width: 450px;
+  height: 450px;
+
+  right: -180px;
+  bottom: -180px;
+
+  background: rgba(204, 197, 161, 0.4);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: min(1200px, 92%);
+  margin: auto;
+
+  padding: 28px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+
+  font-size: 34px;
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.demo-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 17px;
+
+  border: 1px solid var(--border);
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pulse-dot,
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #78926d;
+
+  animation: pulse 2s infinite;
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.cart-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  font-size: 20px;
+
+  box-shadow: 0 8px 25px rgba(70, 50, 35, 0.05);
+}
+
+.cart-label {
+  margin-bottom: 5px;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+
+  color: var(--muted);
+}
+
+#cart-count-display {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  width: min(1200px, 92%);
+  min-height: 620px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  gap: 70px;
+
+  padding: 60px 0 110px;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin-bottom: 28px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(60px, 7vw, 105px);
+  font-weight: 600;
+
+  line-height: 0.95;
+  letter-spacing: -4px;
+}
+
+.hero h1 em {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.description {
+  max-width: 520px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.state-indicator {
+  margin-top: 35px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+  position: relative;
+
+  height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-circle {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #f5ebe2,
+      #e2c8b5
+    );
+
+  box-shadow:
+    inset 0 0 0 25px rgba(255, 255, 255, 0.15),
+    0 30px 80px rgba(110, 75, 50, 0.12);
+}
+
+.hero-bottle {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  filter: drop-shadow(20px 30px 25px rgba(70, 45, 30, 0.2));
+}
+
+.hero-cap {
+  width: 60px;
+  height: 28px;
+
+  border-radius: 5px 5px 2px 2px;
+
+  background: #413933;
+}
+
+.hero-neck {
+  width: 44px;
+  height: 45px;
+
+  background: #c89d80;
+}
+
+.hero-body {
+  width: 160px;
+  height: 210px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 25px 25px 38px 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e1bda3,
+      #a76d50
+    );
+
+  color: white;
+
+  box-shadow:
+    inset 12px 0 25px rgba(255, 255, 255, 0.18);
+}
+
+.hero-body span {
+  font-family: "Playfair Display", serif;
+
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+.hero-body small {
+  margin-top: 8px;
+
+  font-size: 8px;
+  letter-spacing: 4px;
+}
+
+.floating-card {
+  position: absolute;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 13px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 12px;
+}
+
+.floating-one {
+  top: 80px;
+  right: 20px;
+}
+
+.floating-two {
+  bottom: 90px;
+  left: 15px;
+}
+
+
+/* =========================
+   SHOP SECTION
+========================= */
+
+.shop {
+  width: min(1200px, 92%);
+  margin: auto;
+
+  padding-bottom: 130px;
+}
+
+.section-heading {
+  margin-bottom: 50px;
+
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.section-heading h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(36px, 4vw, 55px);
+  font-weight: 600;
+
+  letter-spacing: -1.5px;
+}
+
+.shop-description {
+  max-width: 370px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+
+.products-grid {
+  width: 100%;
+
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr)) !important;
+
+  gap: 22px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+  width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: var(--shadow);
+}
+
+
+/* =========================
+   PRODUCT VISUAL
+========================= */
+
+.product-visual {
+  position: relative;
+
+  width: 100%;
+  height: 280px;
+
+  flex-shrink: 0;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden;
+}
+
+.product-visual::before {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.product-tag {
+  position: absolute;
+  z-index: 5;
+
+  top: 16px;
+  right: 16px;
+
+  padding: 7px 11px;
+
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* PRODUCT BACKGROUNDS */
+
+.perfume {
+  background: #e8d7ca;
+}
+
+.candle {
+  background: #ddd2c1;
+}
+
+.oil {
+  background: #d8ddd1;
+}
+
+.rose {
+  background: #ead5d8;
+}
+
+
+/* =========================
+   PERFUME
+========================= */
+
+.perfume-bottle {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  filter:
+    drop-shadow(12px 18px 15px rgba(70, 40, 30, 0.2));
+}
+
+.perfume-cap {
+  width: 42px;
+  height: 20px;
+
+  background: #403832;
+
+  border-radius: 4px;
+}
+
+.perfume-neck {
+  width: 28px;
+  height: 25px;
+
+  background: #c59a80;
+}
+
+.perfume-body {
+  width: 105px;
+  height: 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px 16px 28px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8b49c,
+      #a96e51
+    );
+
+  color: white;
+}
+
+.perfume-body span {
+  font-family: "Playfair Display", serif;
+
+  letter-spacing: 3px;
+}
+
+.perfume-body small {
+  margin-top: 6px;
+
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   CANDLE
+========================= */
+
+.candle-jar {
+  position: relative;
+  z-index: 2;
+
+  filter:
+    drop-shadow(12px 18px 15px rgba(70, 40, 30, 0.18));
+}
+
+.candle-top {
+  position: relative;
+
+  width: 115px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: #f4eadc;
+}
+
+.flame {
+  position: absolute;
+
+  top: -22px;
+  left: 50%;
+
+  width: 14px;
+  height: 25px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50% 50% 50% 50%;
+
+  background: #d59b54;
+
+  animation: flicker 1.5s infinite alternate;
+}
+
+.candle-body {
+  width: 115px;
+  height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px 8px 25px 25px;
+
+  background: #8d715e;
+
+  color: white;
+}
+
+.candle-body span {
+  font-family: "Playfair Display", serif;
+
+  letter-spacing: 2px;
+}
+
+.candle-body small {
+  margin-top: 7px;
+
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   BODY OIL
+========================= */
+
+.oil-bottle {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  filter:
+    drop-shadow(12px 18px 15px rgba(40, 60, 40, 0.15));
+}
+
+.oil-pump {
+  position: relative;
+
+  width: 70px;
+  height: 15px;
+
+  border-radius: 4px;
+
+  background: #777c70;
+}
+
+.oil-pump::after {
+  content: "";
+
+  position: absolute;
+
+  width: 15px;
+  height: 35px;
+
+  top: 10px;
+  right: 5px;
+
+  border-radius: 0 0 4px 4px;
+
+  background: #777c70;
+}
+
+.oil-neck {
+  width: 30px;
+  height: 35px;
+
+  background: #b8bcae;
+}
+
+.oil-body {
+  width: 100px;
+  height: 135px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px 14px 25px 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a9b59d,
+      #7e8c72
+    );
+
+  color: white;
+}
+
+.oil-body span {
+  font-family: "Playfair Display", serif;
+
+  letter-spacing: 2px;
+}
+
+.oil-body small {
+  margin-top: 7px;
+
+  font-size: 7px;
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   ROSE PERFUME
+========================= */
+
+.rose-bottle {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  filter:
+    drop-shadow(12px 18px 15px rgba(80, 40, 40, 0.16));
+}
+
+.rose-cap {
+  width: 65px;
+  height: 25px;
+
+  border-radius: 5px;
+
+  background: #704f50;
+}
+
+.rose-body {
+  width: 115px;
+  height: 145px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50% 50% 28px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8aeb4,
+      #a97079
+    );
+
+  color: white;
+}
+
+.rose-body span {
+  font-family: "Playfair Display", serif;
+
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.rose-body small {
+  margin-top: 7px;
+
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   PRODUCT INFORMATION
+========================= */
+
+.product-info {
+  width: 100%;
+
+  min-height: 210px;
+
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category {
+  margin-bottom: 10px;
+
+  color: var(--accent);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.product-info h3 {
+  margin-bottom: 10px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.product-info p:not(.category) {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.product-footer {
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.price {
+  font-family: "Playfair Display", serif;
+
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.add-to-cart-btn {
+  border: none;
+
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 12px;
+
+  background: var(--text);
+  color: white;
+
+  font-family: "DM Sans", sans-serif;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+
+  background: var(--accent-dark);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.95);
+}
+
+.add-to-cart-btn span {
+  font-size: 17px;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.architecture {
+  margin-top: 20px;
+
+  padding: 120px 4%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eee8df,
+      #e7e0d5
+    );
+}
+
+.architecture-heading {
+  margin-bottom: 55px;
+
+  text-align: center;
+}
+
+.architecture-heading h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 600;
+
+  line-height: 1.1;
+}
+
+.flow-container {
+  max-width: 1000px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.flow-card {
+  width: 270px;
+  min-height: 210px;
+
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.active-flow {
+  background: var(--text);
+  color: white;
+
+  box-shadow: 0 20px 50px rgba(45, 41, 37, 0.18);
+}
+
+.flow-number {
+  margin-bottom: 22px;
+
+  color: var(--accent);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.flow-icon {
+  margin-bottom: 15px;
+
+  font-size: 24px;
+}
+
+.flow-card h3 {
+  margin-bottom: 10px;
+
+  font-size: 17px;
+}
+
+.flow-card p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.active-flow p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.flow-arrow {
+  color: var(--accent);
+
+  font-size: 28px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+  position: fixed;
+  z-index: 100;
+
+  bottom: 30px;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px 22px;
+
+  transform: translate(-50%, 150px);
+
+  border-radius: 100px;
+
+  background: var(--text);
+  color: white;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+  font-size: 13px;
+
+  transition: transform 0.4s ease;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+}
+
+.toast-icon {
+  color: #d9ac7d;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.cart-pop {
+  animation: cartPop 0.45s ease;
+}
+
+@keyframes cartPop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+    color: var(--accent);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(120, 146, 109, 0.5);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 8px rgba(120, 146, 109, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(120, 146, 109, 0);
+  }
+}
+
+@keyframes flicker {
+  from {
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  to {
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+
+  .products-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .description {
+    margin: auto;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .flow-container {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    width: min(94%, 1200px);
+  }
+
+  .demo-badge {
+    display: none;
+  }
+
+  .cart-label {
+    display: none;
+  }
+
+  #cart-count-display {
+    font-size: 11px;
+  }
+
+  .cart-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero {
+    width: min(92%, 1200px);
+
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-visual {
+    height: 390px;
+
+    transform: scale(0.82);
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .product-card {
+    max-width: 420px;
+
+    margin: auto;
+  }
+
+  .section-heading {
+    gap: 20px;
+  }
+
+  .shop-description {
+    max-width: 100%;
+  }
+
+  .architecture {
+    padding: 90px 5%;
+  }
+
+  .flow-card {
+    width: min(100%, 330px);
+  }
+
+  .toast {
+    width: max-content;
+    max-width: 90%;
+
+    text-align: center;
+  }
+}

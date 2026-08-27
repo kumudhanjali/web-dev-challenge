@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lumé — Global State Demo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="navbar">
+
+    <a href="#" class="logo">lumé<span>.</span></a>
+
+    <div class="demo-badge">
+      <span class="pulse-dot"></span>
+      Global State Demo
+    </div>
+
+    <div class="cart-container">
+
+      <div class="cart-icon">🛍️</div>
+
+      <div>
+        <p class="cart-label">YOUR CART</p>
+        <p id="cart-count-display">Items in Cart: 0</p>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">DAY 43 / 50</p>
+
+        <h1>
+          One store.<br />
+          <em>Everywhere.</em>
+        </h1>
+
+        <p class="description">
+          Multiple products. Multiple actions. One shared global
+          state. Add anything to your cart and watch every subscribed
+          component react automatically.
+        </p>
+
+        <div class="state-indicator">
+          <span class="status-dot"></span>
+          Global store connected
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual">
+
+        <div class="hero-circle"></div>
+
+        <div class="floating-card floating-one">
+          <span>✦</span>
+          Shared State
+        </div>
+
+        <div class="floating-card floating-two">
+          <span>●</span>
+          Subscribers
+        </div>
+
+        <div class="hero-bottle">
+
+          <div class="hero-cap"></div>
+          <div class="hero-neck"></div>
+
+          <div class="hero-body">
+            <span>LUMÉ</span>
+            <small>COLLECTION</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SHOP -->
+
+    <section class="shop">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Curated for quiet moments.</h2>
+        </div>
+
+        <p class="shop-description">
+          Every product button is a publisher. They all communicate
+          with the same central global store.
+        </p>
+
+      </div>
+
+
+      <div class="products-grid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <article class="product-card">
+
+          <div class="product-visual perfume">
+
+            <span class="product-tag">BESTSELLER</span>
+
+            <div class="perfume-bottle">
+
+              <div class="perfume-cap"></div>
+              <div class="perfume-neck"></div>
+
+              <div class="perfume-body">
+                <span>LUMÉ</span>
+                <small>VELVET</small>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="product-info">
+
+            <div>
+              <p class="category">FRAGRANCE</p>
+              <h3>Velvet Essence</h3>
+
+              <p>
+                Warm vanilla, soft woods and golden amber.
+              </p>
+            </div>
+
+            <div class="product-footer">
+              <span class="price">₹2,499</span>
+
+              <button class="add-to-cart-btn">
+                Add
+                <span>+</span>
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article class="product-card">
+
+          <div class="product-visual candle">
+
+            <span class="product-tag">LIMITED</span>
+
+            <div class="candle-jar">
+
+              <div class="candle-top">
+                <div class="flame"></div>
+              </div>
+
+              <div class="candle-body">
+                <span>AMBER</span>
+                <small>GLOW</small>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="product-info">
+
+            <div>
+              <p class="category">HOME</p>
+              <h3>Amber Glow</h3>
+
+              <p>
+                A warm candle for slow evenings and softer spaces.
+              </p>
+            </div>
+
+            <div class="product-footer">
+              <span class="price">₹899</span>
+
+              <button class="add-to-cart-btn">
+                Add
+                <span>+</span>
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article class="product-card">
+
+          <div class="product-visual oil">
+
+            <span class="product-tag">NEW</span>
+
+            <div class="oil-bottle">
+
+              <div class="oil-pump"></div>
+
+              <div class="oil-neck"></div>
+
+              <div class="oil-body">
+                <span>SILK</span>
+                <small>BLOOM</small>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="product-info">
+
+            <div>
+              <p class="category">BODY</p>
+              <h3>Silk Bloom</h3>
+
+              <p>
+                A nourishing body oil with soft floral notes.
+              </p>
+            </div>
+
+            <div class="product-footer">
+              <span class="price">₹1,299</span>
+
+              <button class="add-to-cart-btn">
+                Add
+                <span>+</span>
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article class="product-card">
+
+          <div class="product-visual rose">
+
+            <span class="product-tag">SIGNATURE</span>
+
+            <div class="rose-bottle">
+
+              <div class="rose-cap"></div>
+
+              <div class="rose-body">
+                <span>ROSE</span>
+                <small>No. 07</small>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="product-info">
+
+            <div>
+              <p class="category">FRAGRANCE</p>
+              <h3>Rose No. 07</h3>
+
+              <p>
+                Modern rose, delicate musk and a hint of spice.
+              </p>
+            </div>
+
+            <div class="product-footer">
+              <span class="price">₹1,999</span>
+
+              <button class="add-to-cart-btn">
+                Add
+                <span>+</span>
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- GLOBAL STATE FLOW -->
+
+    <section class="architecture">
+
+      <div class="architecture-heading">
+
+        <p class="eyebrow">HOW IT WORKS</p>
+
+        <h2>One action. One store.<br />Every subscriber reacts.</h2>
+
+      </div>
+
+
+      <div class="flow-container">
+
+        <div class="flow-card">
+
+          <div class="flow-number">01</div>
+
+          <div class="flow-icon">✦</div>
+
+          <h3>Publisher</h3>
+
+          <p>
+            Any product button can publish a change.
+          </p>
+
+        </div>
+
+
+        <div class="flow-arrow">→</div>
+
+
+        <div class="flow-card active-flow">
+
+          <div class="flow-number">02</div>
+
+          <div class="flow-icon">◉</div>
+
+          <h3>Global Store</h3>
+
+          <p>
+            One central source updates the state.
+          </p>
+
+        </div>
+
+
+        <div class="flow-arrow">→</div>
+
+
+        <div class="flow-card">
+
+          <div class="flow-number">03</div>
+
+          <div class="flow-icon">↗</div>
+
+          <h3>Subscribers</h3>
+
+          <p>
+            Every subscribed component receives the update.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- TOAST -->
+
+  <div id="toast" class="toast">
+
+    <span class="toast-icon">✦</span>
+
+    <p>
+      Added to cart — global state updated
+    </p>
+
+  </div>
+
+
+  <script type="module" src="main.js"></script>
+
+</body>
+</html>
